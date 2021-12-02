@@ -1,0 +1,1 @@
+print("Cursor-Hw-Django.")
