@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Post
+from .models import Restaurant, Staff, Country, City, Dish, Menu
 
-# Register your models here.
-admin.site.register(Post)
+admin.site.register(Restaurant)
+admin.site.register(Staff)
+admin.site.register(Country)
+admin.site.register(City)
+admin.site.register(Dish)
+admin.site.register(Menu)
