@@ -31,6 +31,8 @@ or
 
 ### This is main page project car_dealer.
 ![img.png](img.png)
+![Screenshot from 2021-12-31 02-15-46](https://user-images.githubusercontent.com/86627796/147828004-e64e7d19-8df6-475d-9f24-ffd51f3ed7e7.png)
+
 
 ### Go to the dealer list and you see this such page.
 
