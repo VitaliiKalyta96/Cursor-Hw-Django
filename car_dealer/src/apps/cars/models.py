@@ -34,13 +34,13 @@ class Car(models.Model):
     )
 
     car_id = models.IntegerField(primary_key=True)
-    color_id = models.ForeignKey('Color', on_delete=models.CASCADE)
-    dealer_id = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,)
-    model_id = models.ForeignKey('Model', on_delete=models.CASCADE)
+    color_id = models.ForeignKey('cars.Color', on_delete=models.CASCADE)
+    dealer_id = models.ForeignKey('dealers.Dealer', on_delete=models.SET_NULL, null=True)
+    model_id = models.ForeignKey('cars.Model', on_delete=models.CASCADE, null=True)
+    fuel_type_id = models.ForeignKey('cars.FuelType', on_delete=models.CASCADE, null=True)
     engine_type = models.CharField(max_length=30)
     pollutant_class = models.CharField(max_length=20, choices=CHOICES, default=CHOICE_AA)
     price = models.CharField(max_length=20)
-    fuel_type = models.CharField(max_length=20)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=STATUS_IN_STOCK)
     door = models.CharField(max_length=20)
     capacity = models.CharField(max_length=25)
@@ -70,7 +70,16 @@ class Color(models.Model):
     name = models.CharField(max_length=30)
 
     def __str__(self):
-        return f"Car color:", self.name
+        return self.name
+
+
+class Model(models.Model):
+    model_id = models.IntegerField(primary_key=True)
+    brand_id = models.ForeignKey('cars.Brand', on_delete=models.SET_NULL, null=True)
+    name = models.CharField(max_length=30, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Brand(models.Model):
@@ -78,16 +87,7 @@ class Brand(models.Model):
     name = models.CharField(max_length=30, unique=True)
 
     def __str__(self):
-        return f"Car brand:", self.name
-
-
-class Model(models.Model):
-    model_id = models.IntegerField(primary_key=True)
-    brand_id = models.ForeignKey(Car, on_delete=models.SET_NULL, null=True)
-    name = models.CharField(max_length=30, unique=True)
-
-    def __str__(self):
-        return f"Car model:", self.name
+        return self.name
 
 
 class Property(models.Model):
@@ -96,10 +96,33 @@ class Property(models.Model):
     name = models.CharField(max_length=40)
 
     def __str__(self):
-        return f"Car model:", self.name
+        return self.name
 
 
 class CarProperty(models.Model):
     car_property_id = models.IntegerField(primary_key=True)
     property_id = models.ForeignKey(Property, on_delete=models.SET_NULL, null=True)
     car_id = models.ForeignKey(Car, on_delete=models.SET_NULL, null=True)
+
+
+class FuelType(models.Model):
+    CHOICE_1 = 'gas'
+    CHOICE_2 = 'diesel'
+    CHOICE_3 = 'gasoline'
+    CHOICE_4 = 'electro'
+
+    CHOICE_FUEL_TYPE = (
+        (CHOICE_1, "Gas"),
+        (CHOICE_2, "Diesel"),
+        (CHOICE_3, "Gasoline"),
+        (CHOICE_4, "Electro"),
+    )
+    fuel_type_id = models.IntegerField(primary_key=True, verbose_name='ID')
+    type = models.CharField(max_length=40, choices=CHOICE_FUEL_TYPE, default=CHOICE_2, verbose_name='Fuel type')
+
+    def __str__(self):
+        return self.type
+
+    class Meta:
+        verbose_name = 'Fuel type'
+        verbose_name_plural = 'Fuel types'

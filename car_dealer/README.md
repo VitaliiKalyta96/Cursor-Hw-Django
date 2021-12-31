@@ -9,6 +9,10 @@ Just run `make test_env`
 
 `docker-compose -f docker-compose-dev.yml build`
 
+#### In order run project to production.
+
+`docker-compose -f docker-compose-prod.yml build`
+
 #### Before running project
 
 - Create local env file
@@ -19,6 +23,32 @@ Just run `make test_env`
 
 `docker-compose -f docker-compose-dev.yml up`
 
+or
+
+`docker-compose -f docker-compose-prod.yml up`
+
+# Short overview
+
+### This is main page project car_dealer.
+![img.png](img.png)
+
+### Go to the dealer list and you see this such page.
+
+![img_1.png](img_1.png)
+
+### When go to the subscribe/new/ will be next.
+
+![img_2.png](img_2.png)
+
+### Note. If you want sign up your email success that subscriber and go to 
+### success redirect page, first of all you must add email in admin directly in apps 
+### newsletters after that sign up and all.=)
+![img_3.png](img_3.png)
+
+####! All functions and views unfortunately don't work, but this is min startapp project
+#### is called "Car Dealer"
+
+This was short overview project
 
 #### When project is running
 

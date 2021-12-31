@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car dealer</title>
+</head>
+<body style="background-image: url('http://3dautodealer.com/assets/images/bmw-autohaus-dealership-07122019-143440-1920x1080.jpg')">
+<div style="background: antiquewhite">
+    <h1><center>Welcome the main page site about a cars!</center></h1>
+    {% if request.user.auth_token %}
+        <p>Welcome, {{ request.user }}</p>
+    {% endif %}
+        <p>Select category</p> <br/>
+        <a href="./cars">Cars</a>  <a href="/api/car/json">JSON</a> <br/>
+        <a href="./orders">Orders</a> <a href="/api/order/json">JSON</a><br/>
+        <a href="./dealers">Dealers</a> <a href="/api/dealer/json">JSON</a><br/>
+
+    <br/>
+    <a href="subscribe/new/">Subscribe the newsletters</a><br/>
+    {% if request.user.auth_token %}
+        <a href="./user/logout">Logout</a>
+    {% else %}
+        <a href="./user/login">Login</a>
+    {% endif %}
+</div>
+</body>
+</html>

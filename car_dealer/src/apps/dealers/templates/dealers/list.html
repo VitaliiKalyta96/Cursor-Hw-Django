@@ -1,0 +1,13 @@
+<body style="background-image: url('http://3dautodealer.com/assets/images/bmw-autohaus-dealership-07122019-143600-1920x1080.jpg')">
+
+<center><h1>Dealers list</h1>
+<div style="font-size: 25px">
+{#    {% for dealer in dealers %}#}
+        <a href="/dealers/{{ dealer.id }}">Entry in dealer</a><br>
+        {{ dealer.title }}<br>
+        <br>
+{#    {% endfor %}#}
+        <a href="/">Main page</a>
+</div>
+</center>
+</body>

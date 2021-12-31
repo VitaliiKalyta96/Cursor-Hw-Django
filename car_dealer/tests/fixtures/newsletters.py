@@ -1,6 +1,6 @@
 import factory
 
-from apps.newsletters.models import NewsLetter
+from src.apps.newsletters.models import NewsLetter
 
 
 class NewsLetterFactory(factory.DjangoModelFactory):

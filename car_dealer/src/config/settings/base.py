@@ -121,16 +121,16 @@ CACHES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.users.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.users.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.users.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.users.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -159,3 +159,19 @@ STATIC_ROOT = env.str('STATIC_ROOT', BASE_DIR)
 
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+
+
+LOGIN_REDIRECT_URL =  '/api-token-users/'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    # 'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
+
+DEFAULT_FILTER_BACKENDS = 'django_filters.rest_framework.DjangoFilterBackend',
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
