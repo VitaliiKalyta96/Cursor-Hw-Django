@@ -1,8 +1,8 @@
 import factory
 from factory import fuzzy
 
-from apps.orders.models import Order
-from apps.cars.models import Car
+from src.apps.orders.models import Order
+from src.apps.cars.models import Car
 
 
 class OrderFactory(factory.DjangoModelFactory):

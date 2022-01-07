@@ -1,7 +1,7 @@
 import factory
 from factory import fuzzy
 
-from apps.dealers.models import Dealer
+from src.apps.dealers.models import Dealer
 # from apps.countries.models import Country, City
 from tests.fixtures.countries import CountryFactory, CityFactory
 

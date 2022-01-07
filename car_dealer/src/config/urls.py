@@ -17,10 +17,28 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+
 from rest_framework.authtoken.views import obtain_auth_token
+
+# from rest_framework.authtoken import views
+# from src.apps.users.views import create_auth_token
+# from src.apps.users.views import CustomAuthToken
+
+from src.apps.cars.urls import api_patterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('main/', include('apps.countries.urls')),
+    path('subscribe/', include('apps.newsletters.urls')),
+    # path('api-token-users/', obtain_auth_token),
+    # path('api-token-users/', create_auth_token),
+    # path('api-token-users/', CustomAuthToken.as_view()),
+    path('dealers/', include('apps.dealers.urls')),
+    path('cars/', include('apps.cars.urls')),
+    path('orders/', include('apps.orders.urls')),
+    path('api/', include(api_patterns)),
+
 ]
 
 if settings.DEBUG:

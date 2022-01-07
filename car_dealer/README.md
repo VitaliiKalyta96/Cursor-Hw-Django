@@ -9,6 +9,10 @@ Just run `make test_env`
 
 `docker-compose -f docker-compose-dev.yml build`
 
+#### In order run project to production.
+
+`docker-compose -f docker-compose-prod.yml build`
+
 #### Before running project
 
 - Create local env file
@@ -19,6 +23,34 @@ Just run `make test_env`
 
 `docker-compose -f docker-compose-dev.yml up`
 
+or
+
+`docker-compose -f docker-compose-prod.yml up`
+
+# Short overview
+
+### This is main page project car_dealer.
+![Screenshot from 2021-12-31 02-15-46](https://user-images.githubusercontent.com/86627796/147828004-e64e7d19-8df6-475d-9f24-ffd51f3ed7e7.png)
+
+
+### Go to the dealer list and you see this such page.
+
+![img_1.png](img_1.png)
+
+### When go to the subscribe/new/ will be next.
+![Screenshot from 2021-12-31 02-16-00](https://user-images.githubusercontent.com/86627796/147828046-3f846a32-6bb9-42d6-8e48-9a8ffd14cc1b.png)
+
+### Note. If you want sign up your email success that subscriber and go to 
+### success redirect page, first of all you must add email in admin directly in apps 
+### newsletters after that sign up and all.=)
+![Screenshot from 2021-12-31 02-16-11](https://user-images.githubusercontent.com/86627796/147828059-02fd2314-13b5-44e1-be9b-87255fd07b93.png)
+![Screenshot from 2021-12-31 02-16-20](https://user-images.githubusercontent.com/86627796/147828123-7e72fe89-7791-467c-8974-dbdc4c2d7cd5.png)
+
+
+####! All functions and views unfortunately don't work, but this is min startapp project
+#### is called "Car Dealer"
+
+This was short overview project
 
 #### When project is running
 

@@ -1,7 +1,7 @@
 import factory
 from factory import fuzzy
 
-from apps.countries.models import Country, City
+from src.apps.countries.models import Country, City
 
 
 class CountryFactory(factory.DjangoModelFactory):

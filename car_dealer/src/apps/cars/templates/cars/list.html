@@ -1,0 +1,12 @@
+<body style="background-image: url('https://lh3.googleusercontent.com/proxy/eiG1P0CRFBKPTgQ-bK4HknjOUoo_heL2qt7OPsP8Ha3JbskCwKVhwx_5xwJnIxnZ5Ecwlc12mm5_OAwuiS8DMwnSeY7Z')">
+<h1>Cars list</h1>
+<div>
+    {% for car in cars %}
+        <a href="/cars/{{ car.id }}">Go to dealer</a><br>
+        {{ car.model }}<br>
+        {{ car.price }}<br>
+        <br>
+    {% endfor %}
+    <a href="/">Main page</a>
+</div>
+</body>

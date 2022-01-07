@@ -1,0 +1,21 @@
+{#{% extends 'base.html' %}#}
+
+<body style="background-image: url('https://wallpaperaccess.com/full/6810591.jpg')">
+    {% block main %}
+        <h1>{{ dealer.title }}</h1>
+        <center>
+        <h3>Welcome</h3>
+        </center>
+        <div class="container">
+            <div class="row">
+                <center>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <center><input type="submit" value="Subscribe"></center>
+                </form>
+                </center>
+            </div>
+        </div>
+    {% endblock %}
+</body>
